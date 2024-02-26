@@ -12,8 +12,16 @@ for i in range(1, len(data)):
     line = data[i]
     d[line[0]] = d.get(line[0], 0) + float(line[-1])
 
-# поиск 10 наименее продаваемфых категорий
-items = list(d.items())
-items.sort(key=lambda x : float(x[-1]))
+# поиск 10 наименее продаваемых продуктов
+
+# группировка по названию товара
+d2 = dict()
+for i in range(1, len(data)):
+    line = data[i]
+    d2[line[1]] = d2.get(line[1], 0) + float(line[-1])
+
+# сортировка для поиска минимального
+items = list(d2.items())
+items.sort(key=lambda x : x[-1])
 for i in range(10):
-    print(f'{items[i][0]}, {items[i][1]}.')
+    print(f'{items[i][0]}, {items[i][-1]}.')

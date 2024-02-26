@@ -1,8 +1,8 @@
 def gencode(name, date):
     '''
-    :param name: название товара
-    :param date: дата поступления
-    :return: промокод для данного товара
+    :param name: string название товара
+    :param date: string дата поступления
+    :return: string промокод для данного товара
     '''
     day, month, year = date.split('.')
     p1 = name[-2:][::-1]
