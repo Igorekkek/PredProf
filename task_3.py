@@ -4,9 +4,12 @@ with open('products.csv', encoding='utf8') as file:
     for i in range(len(data)):
         data[i] = [obj.strip() for obj in data[i].split(';')]
 
+# ввод категории
 category = input()
 while category != 'молоко':
-    res_id = -1
+    res_id = -1 # индекс минимального товара
+
+    # поиск товара соответствующей категории
     for i in range(1, len(data)):
         line = data[i]
         if line[0] == category:
