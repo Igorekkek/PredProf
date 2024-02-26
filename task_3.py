@@ -9,7 +9,7 @@ category = input()
 while category != 'молоко':
     res_id = -1 # индекс минимального товара
 
-    # поиск товара соответствующей категории
+    #  поиск товара соответствующей категории
     for i in range(1, len(data)):
         line = data[i]
         if line[0] == category:
